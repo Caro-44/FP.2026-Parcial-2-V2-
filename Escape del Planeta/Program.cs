@@ -7,13 +7,14 @@ cumpliendo con ciertas condiciones.
 
  */
 
-const int DISTANCIA_AL_ESPACIO_KM = 10;
-const int COMBUSTIBLE_INICIAL     = 10;
-const int ESCUDO_MAXIMO           = 50;
-const int ESCUDO_POR_TURNO        = 5;
-const int PERDIDA_KM_POR_TURNO    = 3;
-const int COMBUSTIBLE_POR_TURNO   = 2;
-const int ASCENSO_POR_TURNO       = 2;
+const int   DISTANCIA_AL_ESPACIO_KM = 10;
+const int   COMBUSTIBLE_INICIAL     = 10;
+const int   ESCUDO_MAXIMO           = 50;
+const int   ESCUDO_POR_TURNO        = 5;
+const float ZONA_CALMA_BONO_ESCUDO  = 2F;
+const int   PERDIDA_KM_POR_TURNO    = 3;
+const int   COMBUSTIBLE_POR_TURNO   = 2;
+const int   ASCENSO_POR_TURNO       = 2;
 
 var kmRecorridos      = 0;
 var combustibleActual = COMBUSTIBLE_INICIAL;
@@ -33,7 +34,7 @@ Console.WriteLine("\n");
 while (kmRecorridos < DISTANCIA_AL_ESPACIO_KM && combustibleActual > 0)
 {
     var esZonaDeEscombros = false;
-    var esZonadDeCalma    = false;
+    var esZonadDeCalma    = true;
     var esZonaNeutral =! esZonaDeEscombros && !esZonadDeCalma;
 
     string opcion;
@@ -46,16 +47,17 @@ while (kmRecorridos < DISTANCIA_AL_ESPACIO_KM && combustibleActual > 0)
         else if (esZonadDeCalma)
         {
             Console.WriteLine("Estás en una zona de calma.");
+            Console.WriteLine("¿Qué acción deseas realizar?");
+            Console.WriteLine("1. Ascender");
+            Console.WriteLine("2. Esperar (Bono de recuperación)");
         }
         else if (esZonaNeutral)
         {
             Console.WriteLine("Estás en una zona neutral.");
+            Console.WriteLine("¿Qué acción deseas realizar?");
+            Console.WriteLine("1. Ascender");
+            Console.WriteLine("2. Esperar");
         }
-
-        Console.WriteLine("¿Qué acción deseas realizar?");
-        Console.WriteLine("1. Ascender");
-        Console.WriteLine("2. Esperar");
-        opcion = Console.ReadLine() ?? "";
 
         if (opcion !="1" && opcion != "2")
         {
@@ -76,7 +78,19 @@ while (kmRecorridos < DISTANCIA_AL_ESPACIO_KM && combustibleActual > 0)
     else if (opcion == "2")
     {
         Console.WriteLine("Esperando...");
-        escudoActual = Math.Min(ESCUDO_MAXIMO, escudoActual + ESCUDO_POR_TURNO);
+        
+        var   escudoTurno = escudoActual + ESCUDO_POR_TURNO;
+        float bonoTurno;
+        
+        if (esZonadDeCalma)
+        {
+            escudoTurno += ZONA_CALMA_BONO_ESCUDO;
+        }
+        
+        escudoActual = Math.Min(
+                                ESCUDO_MAXIMO, 
+                                escudoActual + ESCUDO_POR_TURNO
+                                );
         kmRecorridos = Math.Max(0, kmRecorridos - PERDIDA_KM_POR_TURNO);
         Console.WriteLine("Escudo: " + escudoActual);
         Console.WriteLine("Distancia: " + kmRecorridos);
