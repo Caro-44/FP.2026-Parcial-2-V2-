@@ -12,8 +12,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combate por turnos", "Comba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escape de Planeta", "Escape de Planeta\Escape de Planeta.csproj", "{9151FF25-20B2-454F-B6AB-2CAABE93DD27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo", "Ejemplo\Ejemplo.csproj", "{3433FDA3-9FCD-47CF-90DE-04B6238FBF43}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,9 +42,5 @@ Global
 		{9151FF25-20B2-454F-B6AB-2CAABE93DD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9151FF25-20B2-454F-B6AB-2CAABE93DD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9151FF25-20B2-454F-B6AB-2CAABE93DD27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3433FDA3-9FCD-47CF-90DE-04B6238FBF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3433FDA3-9FCD-47CF-90DE-04B6238FBF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3433FDA3-9FCD-47CF-90DE-04B6238FBF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3433FDA3-9FCD-47CF-90DE-04B6238FBF43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
