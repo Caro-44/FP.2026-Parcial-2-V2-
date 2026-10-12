@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables y Datos", "Variab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Ejercicios", "Micro Ejercicios\Micro Ejercicios.csproj", "{1FADC1B1-12BC-46B8-BABC-377842C201FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diccionario", "Diccionario\Diccionario.csproj", "{33993BE1-BAE8-4D47-B21E-A86A9DF3010D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diccionarios", "Diccionarios\Diccionarios.csproj", "{33993BE1-BAE8-4D47-B21E-A86A9DF3010D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

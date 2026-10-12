@@ -1,9 +1,11 @@
-﻿﻿Dictionary<string, int> items = new()
-{
-    {"Espada", 25},
-    {"Arco", 15},
-    {"Hacha", 35},
-};
+﻿// Micro Ejercicios 1 & 2 de Diccionarios
+
+Dictionary<string, int> items = new()
+                                {
+                                    {"Espada", 25},
+                                    {"Arco", 15},
+                                    {"Hacha", 35},
+                                };
 
 Console.WriteLine(items["Espada"]);
 Console.WriteLine(items["Hacha"]);
@@ -47,7 +49,7 @@ if (items.ContainsKey("Hacha"))
     Console.WriteLine("DMG Hacha: " + items["Hacha"]);
 }
 
-// 5) Vaciar Diccionario e Intenta Agregar "Espada".
+// 5) Vaciar Diccionarios e Intenta Agregar "Espada".
 Console.WriteLine(items.Count);
 Console.Clear();
 items.TryAdd("Espada", 25);
