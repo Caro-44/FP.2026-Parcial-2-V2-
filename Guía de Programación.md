@@ -191,3 +191,85 @@ Omite el resto de la iteración y continúa con la siguiente.
 5. `continue`: Saltar solo la iteración actual.
 
 ------------------
+
+## ARREGLOS (ARRAYS)
+
+Son estructuras que permiten almacenar múltiples valores del mismo tipo
+bajo un solo nombre, organizados mediante posiciones numéricas.
+Se usan bajo estas circunstancias:
+
+1. **Variable individual:** Para un solo valor.
+2. **Arreglo 1D:** Para varios valores de un mismo tipo.
+3. **Arreglo 2D:** Cuando los datos tienen forma de tabla o mapa.
+4. **Arreglo 3D:** Para representar espacios o estructuras volumétricas.
+5. **Arreglo Jagged (Irregulares):** Estanterías irregulares donde cada fila tiene un número diferente de elementos.
+
+### Formas de declarar:
+
+- **Sin longitud exacta:** `string[] enemies = new string [4];`
+- **Con valores completos:** `int[] scores = new int [] { 10, 25, 50};`
+- **Con valores mediante* ***Collection expression:*** `string[] levels = ["Forest", "Cave", "Castle"];`
+
+### Operaciones básicas:
+
+1. **Cantidad de elementos en el arreglo:** `Arreglo.Length`
+2. **Obtener/Modificar elementos:** `Arreglo[indice]` / `ARREGLO[INDICE] = valor`
+3. **Recorrer arreglo:** Mediante un *ciclo for* (cuándo se requere del índice) ó un *ciclo foreach* (cuando solo se necesita el elemento).
+
+--------------------
+
+## LISTAS
+
+Son estructuras de datos que almacenan una cantidad variable de elementos
+del mismo tipo.
+
+### Conceptos clave
+
+1. **Posición:** Ubicación natural (comienza en 1).
+2. **Conteo:** Cantidad de elementos que están contenidos actualmente.
+3. **Capacidad:** Cantidad de elementos que están creados o reservados en memoria.
+
+Se puede iniciar una lista sin capacidad, por ejemplo:
+`nombres = new List<string>()`
+E ir añadiendo elementos con: `nombres.Add("valor");`
+
+O también se puede inicar una lista con elementos iniciales haciendo uso de llaves.
+Por ejemplo:
+`List<string> frutas = new List<string> { "Manzana", "Plátano", "Naranja" };`
+
+### Métodos para manipular listas
+
+1. **Mostrar cada elemento de la lista:** `foreach (string fruta in frutas)
+{
+    Console.WriteLine(fruta);
+}`
+2. **Devolver la cantidad de elementos de la lista:** `Count`
+3. **Remover elemento:** `List.Remove("Valor");`
+4. **Buscar elemento (Devuelve ¨true" si está en la lista:** `List.Contains("Valor");` 
+5. **Vacíar lista:** `List.Clear();`
+
+------------------
+
+## DICCIONARIOS (`Dictionary<Tkey, TValue>`)
+
+Son estructuras de datos que almacenan elementos en formas de pares.
+
+Para crearlos se pueden declararlos vacíos, con una capacidad inicial o con valores iniciales,
+haciendo uso de llaves []
+Por ejemplo: `Dictionary<string, int> edades = new Dictionary<string, int>();`
+
+### Manipular diccionarios
+
+1. **Agregar un elemento:** `dictionary.Add()`
+2. **Agregar elementos con inicializador de colección:** `Dictionary<string, int> inventario = new()
+   {
+   { "Manzanas", 50 },
+   { "Naranjas", 20 }
+   };
+   }
+   }`
+3. **Agregar elemento de forma segura si no existe:** `Dictionary.TryAdd("Clave, Valor");` (Devuelve *true* si se agregó ó *false* si ya existía).
+4. **Eliminar elementos:** `Dictionary.Remove("Valor");`
+5. **Vacíar diccionario:** `Dictionary.Clear[]`
+
+Se pueden utilizar bucle `foreach` en dado caso de que se requiera leer todos los pares de clave y valor.
