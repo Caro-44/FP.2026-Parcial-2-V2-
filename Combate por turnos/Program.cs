@@ -1,4 +1,6 @@
-﻿/* EJERCICIO 01: Combate por turnos
+﻿// TRABAJÉ EN INDIVIDUAL
+
+/* EJERCICIO 01: Combate por turnos
 
 ANÁLISIS DE PROBLEMA
 
