@@ -27,3 +27,62 @@ Console.WriteLine(log[2]);
 Console.WriteLine(log[3]);
 Console.WriteLine(log[4]);
 Console.WriteLine(log[5]);
+
+Console.WriteLine(" ");
+Console.WriteLine("------------------");
+Console.WriteLine(" ");
+
+/*
+Micro-Ejercicio #2: Generar un programa que administre los enemigos activos de una zona.
+Mostrar el estado en cada paso:
+
+1. Slime, Goblin, Skeleton.
+2. Aparece Orc.
+3. Muere un Slime.
+4. Aparece Orc.
+5. Muere Orc.
+
+¿Arreglo o Lista?
+Es una lista.
+*/
+
+Console.WriteLine("Ejercicio 2: Lista - Enemigos Activos de Zona");
+List<string> enemies = new List<string>();
+
+Console.WriteLine(" ");
+
+Console.WriteLine("1. Slime, Goblin, Skeleton.");
+enemies.Add("Slime");
+enemies.Add("Goblin");
+enemies.Add("Skeleton");
+Console.WriteLine($"Capacity: {enemies.Capacity}");
+Console.WriteLine($"Enemies: {enemies.Count}");
+
+Console.WriteLine(" ");
+
+Console.WriteLine("2. Aparece Orc.");
+enemies.Add("Orc");
+Console.WriteLine($"Capacity: {enemies.Capacity}");
+Console.WriteLine($"Enemies: {enemies.Count}");
+
+Console.WriteLine(" ");
+
+Console.WriteLine("3. Muere un Slime.");
+enemies.Remove("Slime");
+Console.WriteLine($"Capacity: {enemies.Capacity}");
+Console.WriteLine($"Enemies: {enemies.Count}");
+
+Console.WriteLine(" ");
+
+Console.WriteLine("4) Aparece un Orc.");
+enemies.Add("Orc");
+Console.WriteLine($"Capacity: {enemies.Capacity}");
+Console.WriteLine($"Enemies: {enemies.Count}");
+
+Console.WriteLine(" ");
+
+Console.WriteLine("5) Muere Orc.");
+enemies.RemoveAt(2);
+Console.WriteLine($"Capacity: {enemies.Capacity}");
+Console.WriteLine($"Count: {enemies.Count}");
+
