@@ -27,7 +27,7 @@ Console.Write("Integrantes por equipo: ");
 int teamSize = int.Parse(Console.ReadLine());
 Random.Shared.Shuffle(players);
 int team = 1;
-Console.WriteLine($"Equipo {team}:"));
+Console.WriteLine($"Equipo {team}:");
 for (int i = 0; i < players.Length - 1; i++)
 {
     if (i > 0 && i % teamSize == 1)
@@ -38,4 +38,3 @@ for (int i = 0; i < players.Length - 1; i++)
 
     Console.WriteLine(players[i % teamSize]);
     }
-
