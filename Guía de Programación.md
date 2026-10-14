@@ -101,11 +101,11 @@ Tipos de datos:
 - Resta Unaria (--) - *Puede ser prefijo o sufijo.*
 
 **Comparación:**
-- Igual ()
-- Diferente ()
-- Mayor que ()
-- Menor que ()
-- Mayor o igual que ()
+- Igual (=)
+- Diferente (=!)
+- Mayor que (>)
+- Menor que (<)
+- Mayor o igual que (=>)
 - Menor o igual que ()
 
 **Lógicos:**
