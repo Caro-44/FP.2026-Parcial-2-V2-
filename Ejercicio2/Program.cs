@@ -34,7 +34,7 @@ foreach (string color in colores)
 }
 
 Console.WriteLine(" ");
-Console.WriteLine("¿Qué color deseas asignar a #");
+Console.WriteLine("¿Qué color deseas asignar a #?");
 string hashtag = Console.ReadLine();
 
 Console.WriteLine(" ");
