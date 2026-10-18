@@ -36,7 +36,9 @@ int contMartillo = 0;
 var rng = new Random();
 
 //Madera que se generó
-int madera = rng.Next(MATERIA_PRIMA_MIN,MATERIA_PRIMA_MAX + 1);
+int madera          = rng.Next(MATERIA_PRIMA_MIN,MATERIA_PRIMA_MAX + 1);
+int maderaInicial   = madera;
+int maderaUtilizada = 0;
 Console.WriteLine("La cantidad de madera que se tiene es de " + madera);
 Console.WriteLine(" ");
 
@@ -46,14 +48,90 @@ Console.WriteLine(PALAS + " de madera por pala.");
 Console.WriteLine(PICOS + " de madera por pico.");
 Console.WriteLine(LANZAS + " de madera por lanza.");
 Console.WriteLine(MARTILLOS + " de madera por martillo.");
+Console.WriteLine(" ");
 
-List<string> herramientas = new List<string>();
-herramientas.Add("Hacha");
-herramientas.Add("Pala");
-herramientas.Add("Pico");
-herramientas.Add("Lanza");
-herramientas.Add("Martillo");
+Console.WriteLine("Menú para realizar su pedido.");
+Console.WriteLine("1 para hacha.");
+Console.WriteLine("2 para pala.");
+Console.WriteLine("3 para pico.");
+Console.WriteLine("4 para lanza.");
+Console.WriteLine("5 para martillo.");
+Console.WriteLine("-1 para finalizar pedidos.");
+Console.WriteLine(" ");
 
-Console.WriteLine("Escribe la herramienta que deseas. (Hacha, Pala, Pico, Lanza, Martillo");
-Console.ReadLine();
+List<int> ordenes = new List<int>();
+int       pedidos = 0;
 
+while (pedidos != -1)
+{
+    Console.WriteLine("Ingrese su orden.");
+    string entrada = Console.ReadLine();
+    if (!int.TryParse(entrada, out pedidos))
+
+{
+    Console.WriteLine("Dato inválido. Escriba un número solicitado.");
+}
+else if (pedidos == -1)
+{
+    Console.WriteLine("Registro de órdenes finalizado.");
+
+}
+    else if (pedidos != 1 && pedidos != 2 && pedidos != 3 &&  pedidos != 4 && pedidos != 5)
+    {
+        Console.WriteLine("Número inválido. Escriba uno de los solicitados.");
+    }
+else
+{
+    ordenes.Add(pedidos);
+}
+}
+
+Console.WriteLine(" ");
+Console.WriteLine("Inicia la producción.");
+
+foreach (int pedido in ordenes)
+{
+    int costoHerramientas = 0;
+
+    switch (pedido)
+    {
+        case 1: costoHerramientas = HACHA; break;
+        case 2: costoHerramientas = PALAS; break;
+        case 3: costoHerramientas = PICOS; break;
+        case 4: costoHerramientas = LANZAS; break;
+        case 5: costoHerramientas = MARTILLOS; break;
+    }
+
+    if (madera >= costoHerramientas)
+    {
+        madera          -= costoHerramientas;
+        maderaUtilizada += costoHerramientas;
+        if (pedido == 1) contHacha++;
+        else if (pedido == 2) contPala++;
+        else if (pedido == 3) contPico++;
+        else if (pedido == 4) contLanza++;
+        else if (pedido == 5) contMartillo++;
+
+        Console.WriteLine("La herramienta " + pedido + " fue realizada con éxito.");
+    }
+    else
+    {
+        Console.WriteLine("No hay suficiente madera para completar la orden " + pedido + ".");
+        break;
+    }
+}
+
+Console.WriteLine(" ");
+Console.WriteLine("RESULTADOS DE FABRICACIÓN.");
+Console.WriteLine("Madera inicial: " + maderaInicial);
+Console.WriteLine("Madera utilizada: " +  maderaUtilizada);
+int maderaRestante = maderaInicial - maderaUtilizada;
+Console.WriteLine("Madera restante: " + maderaRestante);
+Console.WriteLine(" ");
+
+Console.WriteLine("HERRAMIENTAS FABRICADAS.");
+Console.WriteLine("Hachas: " + contHacha);
+Console.WriteLine("Palas: " + contPala);
+Console.WriteLine("Picos: " + contPico);
+Console.WriteLine("Lanzas: " + contLanza);
+Console.WriteLine("Martillos: " + contMartillo);
